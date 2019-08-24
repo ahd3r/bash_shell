@@ -1,2 +1,2 @@
 # bash_shell
-My bash scripts, while I learn it. Cool! Is't it?
+My bash scripts, while I learn it. Cool! Isn't it? 
