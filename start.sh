@@ -465,3 +465,30 @@ done
 # it is not working, I dunno why
 trap # shows the list of all traps
 trap - 2 # delete all custom traps for signal with 2
+
+# http request
+# start http server by yarn start or uncomment next lines
+# gnome-terminal
+# cd ./for-check-http && yarn start
+
+# curl
+# -d is a data which write into a body request
+curl https://api.chucknorris.io/jokes/random; # GET request by default
+curl -O https://api.chucknorris.io/jokes/random; # GET request by default and store in the output file (in this case its file si a 'random' (without any extension)) (as wget)
+curl https://api.chucknorris.io/jokes/random > chucknorris.joke.json; # GET request by default and store response body in file ( > )
+wget https://api.chucknorris.io/jokes/random; # Make a GET request (no one other, only GET) and store response it the file
+curl http://localhost:4000/; # GET request (by default)
+curl -X POST -d '{"id":"1", "name":"One"}' http://localhost:4000/; # POST request
+# curl -d '{"id":"1", "name":"One"}' http://localhost:4000/; # if -d exist, POST request - by default
+curl -X DELETE http://localhost:4000/1; # DELETE request
+curl -X PUT -d '{"id":"1", "name":"One"}' http://localhost:4000/; # Put request
+curl -X PATCH -d '{"id":"1", "name":"One"}' http://localhost:4000/; # PATCH request
+curl -X HEAD http://localhost:4000/1; # HEAD request (discussion in index.js)
+curl -X OPTIONS http://localhost:4000/; # OPTIONS request (discussion in index.js)
+
+# wget
+wget https://api.chucknorris.io/jokes/random
+
+# Permission for execute file without bash command word
+# chmod +x ./start.sh
+# chmod +x ./root.sh
